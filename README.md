@@ -1,6 +1,5 @@
 # Api Test Framework Template
 
-Foobar is a Python library for dealing with word pluralization.
 
 ## General Info
 
@@ -20,21 +19,6 @@ Maven cucumber filters could be used for executing specific test scenarios with 
 mvn test -Dcucumber.filter.tags="@smoke and @fast"
 ```
 
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
@@ -44,4 +28,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[Api-Test-Template is available under the MIT license. See the LICENSE file for more info.](https://choosealicense.com/licenses/mit/)
