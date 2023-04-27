@@ -1,20 +1,31 @@
 package utils.responseValidation;
 
-import steps.BaseStep;
+import pojos.product.AddProductResp;
 import utils.ScenarioUtil;
+import utils.mapsApi.AddPlaceResponseValidation;
+import utils.productsApi.ProductResponseValidation;
+import utils.requestBodyCreation.PojoUtils;
 
-public class ResponseValidator extends BaseStep {
+public class ResponseValidator {
+
+    private static ResponseValidator responseValidator = new ResponseValidator();
+    private static IResponseValidatable responseValidatable;
+
+    private ResponseValidator(){}
+
+    public static ResponseValidator getInstance(){return responseValidator;}
+
+    public IResponseValidatable getResponseBody(){
+        if (ScenarioUtil.getScenarioName().contains("Add Product")){
+            return (responseValidatable == null) ? new ProductResponseValidation() : responseValidatable;
+        }
+        return (responseValidatable == null) ? new AddPlaceResponseValidation() : responseValidatable;
+    }
 
     /**
      * We use scenarioName to avoid using unnecessary parameter in feature file
      */
     public void validation(){
-        if (ScenarioUtil.getScenarioName().contains("Create Employee")){
-            log.info("Create Employee Response Assertion Started");
-            new EmployeeResponseValidation().employeeResponseValidation();
-        } else if (ScenarioUtil.getScenarioName().contains("Product")) {
-            new ProductResponseValidation().productResponseValidation();
-        }
-        //You can add new validation for different requests
+        getResponseBody().responseValidation();
     }
 }

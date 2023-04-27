@@ -1,6 +1,9 @@
 package steps;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.builder.RequestSpecBuilder;
 import org.junit.Assert;
 import utils.ApiUtils;
@@ -8,7 +11,8 @@ import utils.ConfigReader;
 import utils.requestBodyCreation.PojoUtils;
 import utils.responseValidation.ResponseValidator;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 
 public class Steps extends BaseStep{
 
@@ -65,7 +69,6 @@ public class Steps extends BaseStep{
 
     @And("Verify response body")
     public void verifyResponseBodyFor() {
-        ResponseValidator validator = new ResponseValidator();
-        validator.validation();
+        ResponseValidator.getInstance().validation();
     }
 }

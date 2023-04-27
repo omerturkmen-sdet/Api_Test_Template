@@ -7,16 +7,11 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.restassured.config.LogConfig;
 import utils.ApiUtils;
 import utils.ScenarioUtil;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import static io.restassured.RestAssured.config;
 
 public class Hooks extends BaseStep{
 

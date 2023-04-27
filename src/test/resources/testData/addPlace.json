@@ -1,0 +1,16 @@
+{
+  "location":{
+    "lat":-39.383594,
+    "lng":34.427362
+  },
+  "accuracy":50,
+  "name":"House of House",
+  "phone_number":"(+95) 183 893 3837",
+  "address":"29, side 09",
+  "types":[
+    "movie park",
+    "mall"
+  ],
+  "website":"http://googles.com",
+  "language":"Frenchie-IN"
+}
